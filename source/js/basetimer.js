@@ -68,7 +68,7 @@ const formatTimeLeft = (time) => {
 
 // establecemos el contador de pomodoro
 
-let timeLimit = 1500;
+let timeLimit = 1;
 let timePassed = 0;
 let timeLeft = timeLimit;
 let count = 0;
@@ -86,7 +86,7 @@ const startTimer = () => {
 
     }, 1000);
     stopInterval = setTimeout(() => {
-        if (timePassed == 1500) {
+        if (timePassed == 1) {
             // hacemos uso del contador de pomodoros, luego habrá que hacer un forEach por cada elemento
             count++
             const pomodoroColorContainer = document.getElementById('pomodoroColorContainer')
@@ -94,7 +94,7 @@ const startTimer = () => {
             // hay que resetear timePassed para que el contador, al ser otra vez llamada la funcion, no empiece desde su valor antiguo
             timePassed = 0
                 // time left va a valer lo que valga timeLimit
-            timeLeft = 1500;
+            timeLeft = 1;
             // aca se puede pasar tambien timeLimit
             const baseTimerLabel = document.getElementById('base-timer-label').textContent = `${formatTimeLeft(timeLeft)}`
                 // cambiamos el color 
@@ -112,7 +112,7 @@ const startTimer = () => {
             showData()
 
         }
-    }, 1500000)
+    }, 1000)
 }
 
 // guardamos el numero del pomodoro y la hora en el sessionStorage
