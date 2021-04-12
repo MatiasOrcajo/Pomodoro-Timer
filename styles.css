@@ -1,0 +1,417 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* header */
+
+.header img {
+    width: 80px;
+}
+
+.header h1 {
+    z-index: 999;
+    font-size: 2rem;
+}
+
+@media (min-width: 1000px) {
+    .header h1 {
+        z-index: 999;
+        font-size: 4rem;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* cards */
+
+.cards-container {
+    position: relative;
+    width: 325px;
+    height: 395px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1000px) {
+    .cards-container {
+        position: relative;
+        width: 325px;
+        height: 395px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .cards-container {
+        position: relative;
+        width: 375px;
+        height: 455px;
+    }
+}
+
+.cards-container span {
+    font-weight: bold;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.front-card {
+    position: absolute;
+    background: #ffa96c;
+    background: linear-gradient(120deg, rgba(255, 169, 108, 1) 0%, rgba(238, 78, 4, 1) 100%);
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+
+.front-card h2 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+@media (min-width: 1000px) {
+    .front-card h2 {
+        font-size: 2.6rem;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 1280px) {
+    .front-card h2 {
+        font-size: 3rem;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.back-card {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border: 1px solid grey;
+    border-radius: 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-card p {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.cards-flex {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+    padding-top: 2rem;
+    margin: 2rem 0 4rem 0;
+}
+
+@media (min-width: 1000px) {
+    .cards-flex {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 2rem;
+    }
+    .back-card p {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+
+/* timer */
+
+.timer {
+    padding-top: 4rem;
+}
+
+.timers-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 5rem;
+}
+
+.timers-container h3 {
+    font-weight: bold;
+}
+
+.timers-container h2 {
+    margin-top: 1rem;
+}
+
+@media (min-width: 1000px) {
+    .timers-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.title h2 {
+    font-size: 3rem;
+    display: inline;
+    z-index: 99999;
+}
+
+.title img {
+    width: 355px;
+    z-index: 9999;
+    position: absolute;
+}
+
+
+/* timer pomodoro
+copiar para hacer el timer del descanso */
+
+.base-timer {
+    height: 75px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    transform: translateY(1rem);
+}
+
+@media (min-width: 1000px) {
+    .base-timer {
+        height: 75px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, .2);
+        transform: translateY(1rem);
+    }
+}
+
+.base-timer h3 {
+    margin-top: 2rem;
+}
+
+.base-timer__label {
+    width: 300px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.pomodoro {
+    width: 300px;
+    height: 320px;
+    border-radius: 5%;
+    position: absolute;
+}
+
+.white {
+    padding: .5rem .2rem .2rem .2rem;
+    width: 300px;
+    height: 700px;
+    margin-top: 1.5rem;
+    border-radius: 5%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    margin-top: 5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.pomodoro-flex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+}
+
+@media (min-width: 1000px) {
+    .white {
+        height: 300px;
+        padding: .5rem .2rem .2rem .2rem;
+        width: 400px;
+        height: 700px;
+        margin-top: 1.5rem;
+        border-radius: 5%;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        margin-top: 5rem;
+        text-align: center;
+    }
+}
+
+.white h3 {
+    font-size: 1.2rem;
+    max-width: 100%;
+}
+
+.list {
+    font-size: 1.8rem;
+}
+
+.counter {
+    margin-top: 5rem;
+    font-size: 8rem;
+}
+
+.green-color {
+    background: rgb(61, 212, 94);
+    background: linear-gradient(160deg, rgba(61, 212, 94, 1) 0%, rgba(77, 176, 0, 1) 100%);
+    border: 1px solid rgb(61, 212, 94);
+}
+
+.orange-color {
+    background: rgb(254, 196, 155);
+    background: linear-gradient(160deg, rgba(254, 196, 155, 1) 0%, rgba(241, 133, 83, 1) 100%);
+    border: 1px solid #ffa96c;
+}
+
+
+/* botones */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15rem;
+    }
+}
+
+.button {
+    margin: 1rem 0 1rem 0;
+    height: 50px;
+    padding: 0 1rem 0 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(206, 206, 206, 0.2);
+    transition: all .3s;
+}
+
+@media (min-width: 1000px) {
+    .button {
+        margin: 1rem 0 1rem 0;
+        height: 100px;
+        padding: 0 1rem 0 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(206, 206, 206, 0.2);
+        transition: all .3s;
+        font-size: 1.3rem;
+    }
+}
+
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+    transition: all .3s;
+}
+
+.buttons i {
+    text-align: center;
+}
+
+.buttons i:hover {
+    cursor: pointer;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: black;
+    color: white;
+    bottom: 0;
+    height: 100px;
+    position: relative;
+    margin-top: 10rem;
+}
+
+.footer-container {
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-container a {
+    text-decoration: underline;
+    color: white;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/descarga.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <div class="header">
+                <h1>Pomodoro Timer</h1>
+                <img src="./descarga.png" alt="">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- empieza seccion cartas -->
+    <section>
+        <div class="container">
+            <div class="cards-flex">
+                <!-- card 1 -->
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="front-card">
+                            <h2>¿Qué es?</h2>
+                        </div>
+                        <div class="back-card">
+                            <p>La <span> Técnica Pomodoro </span>es un método para mejorar la administración del tiempo dedicado a una actividad. Fue creado por Francesco Cirillo a fines de la década de 1980.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="front-card">
+                            <h2>Funcionamiento</h2>
+                        </div>
+                        <div class="back-card">
+                            <p>Se basa en usar un temporizador para dividir el tiempo en intervalos fijos, llamados <span> pomodoros</span>, de <span>25 minutos de actividad</span>, seguidos de <span>5 minutos de descanso</span>, con pausas 20 minutos cada
+                                cuatro pomodoros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="front-card">
+                            <h2>Objetivos</h2>
+                        </div>
+                        <div class="back-card">
+                            <p>La Técnica Pomodoro proporciona una simple herramienta para mejorar la productividad <span>aliviando la ansiedad vinculada a comenzar</span>, <span>aumentando la concentración</span>, <span>impulsando la motivación</span> y
+                                <span>reforzando la determinación para alcanzar tus metas</span>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card 4 -->
+
+
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="timer">
+            <div class="title">
+                <h2>Comencemos</h2>
+                <img src="./subrayado.png" alt="">
+            </div>
+            <!-- pomodoro -->
+            <div class="timers-container">
+                <div class="white orange-color" id="pomodoroColorContainer">
+                    <h3>Pomodoro</h3>
+                    <div class="pomodoro-flex">
+                        <div class="pomodoro">
+                            <div id="app">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- botones -->
+
+                <div class="buttons">
+
+                    <button class="button" id="startPomodoro">Empezar pomodoro</button>
+                    <button class="button" id="startBreak">Empezar descanso</button>
+                </div>
+
+                <!-- descanso -->
+
+                <div class="white orange-color" id="breakColorContainer">
+                    <h3>Descanso</h3>
+                    <div class="pomodoro-flex">
+                        <div class="pomodoro">
+                            <div id="app2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-container">
+                <h3>Pomodoro Timer versión 1.0.0</h3>
+                <h3>Desarrollado por <a href="https://matiasorcajo.herokuapp.com">Matías Orcajo</a></h3>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <audio id="timbre" src="./timbre.mp3"></audio>
+    <script src="./basetimer.js"></script>
+    <script src="./break.js"></script>
+</body>
+
+</html>
