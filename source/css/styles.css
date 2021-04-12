@@ -93,7 +93,7 @@ li {
     }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1000px) {
     .cards-container {
         position: relative;
         width: 375px;
@@ -181,7 +181,7 @@ li {
     margin: 2rem 0 4rem 0;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1280px) {
     .cards-flex {
         display: flex;
         justify-content: space-around;
@@ -260,8 +260,16 @@ copiar para hacer el timer del descanso */
     }
 }
 
-.base-timer h3 {
+.base-timer h2 {
     margin-top: 2rem;
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .base-timer h2 {
+        margin-top: 2rem;
+        display: flex;
+    }
 }
 
 .base-timer__label {
@@ -282,7 +290,7 @@ copiar para hacer el timer del descanso */
 .white {
     padding: .5rem .2rem .2rem .2rem;
     width: 300px;
-    height: 700px;
+    height: 150px;
     margin-top: 1.5rem;
     border-radius: 5%;
     position: relative;
