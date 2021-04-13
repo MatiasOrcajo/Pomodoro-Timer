@@ -95,7 +95,7 @@ const startTimer = () => {
             timePassed = 0
                 // time left va a valer lo que valga timeLimit
             timeLeft = 1500;
-            // aca se puede pasar tambien timeLimit
+            // imprimimos
             const baseTimerLabel = document.getElementById('base-timer-label').textContent = `${formatTimeLeft(timeLeft)}`
                 // cambiamos el color 
             pomodoroColorContainer.classList.replace('green-color', 'orange-color');
@@ -110,6 +110,9 @@ const startTimer = () => {
             getData()
                 // imprimimos los datos
             showData()
+                // reestablecemos el boton
+
+
 
         }
     }, 1500000)
@@ -129,8 +132,8 @@ const saveData = () => {
 // obteniendo la data desde el sessionStorage
 let dataSaver = []
 const getData = () => {
-    let progress = JSON.parse(sessionStorage.getItem(`progress${count}`))
-    dataSaver.push(progress)
+    let progress = JSON.parse(sessionStorage.getItem(`progress${count}`));
+    dataSaver.push(progress);
 };
 
 const showData = () => {
@@ -145,8 +148,17 @@ const showData = () => {
 // llamamos al boton de pomodoro e invocamos la funcion
 const startPomodoro = document.getElementById('startPomodoro');
 startPomodoro.addEventListener('click', () => {
+    startPomodoro.disabled = true
+    startBreak.disabled = true
+    setTimeout(() => {
+        startPomodoro.disabled = false
+        startBreak.disabled = false
+    }, 1500000)
+
     startTimer();
 })
+
+
 
 
 
@@ -172,9 +184,7 @@ let app = document.getElementById("app").innerHTML = `
     <h2>Pomodoros hechos en esta sesión:</h2>
     <div class="span-flex">
         <div class="counter">
-            
-
-            <ul id="pomodoros" class="list">
+           <ul id="pomodoros" class="list">
         
             </ul>
         </div>

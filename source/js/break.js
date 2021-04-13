@@ -64,6 +64,13 @@ const breakStartTimer = () => {
 // llamamos al boton de descanso e invocamos la funcion
 const startBreak = document.getElementById('startBreak');
 startBreak.addEventListener('click', () => {
+    startPomodoro.disabled = true
+    startBreak.disabled = true
+    setTimeout(() => {
+        startPomodoro.disabled = false
+        startBreak.disabled = false
+    }, 300000)
+
     breakStartTimer();
 })
 
