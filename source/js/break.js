@@ -40,21 +40,7 @@ const breakStartTimer = () => {
     }, 1000);
     stopInterval = setTimeout(() => {
         if (breakTimePassed == 300) {
-            // hacemos uso del contador de pomodoros, luego habrá que hacer un forEach por cada elemento
-            breakCount++
-            const breakColorContainer = document.getElementById('breakColorContainer')
-            clearInterval(timerInterval);
-            // hay que resetear breakTimePassed para que el contador, al ser otra vez llamada la funcion, no empiece desde su valor antiguo
-            breakTimePassed = 0
-                // time left va a valer lo que valga breakTimeLimit
-            breakTimeLeft = 300;
-            // aca se puede pasar tambien breakTimeLimit
-            const baseTimerLabel = document.getElementById('break-base-timer-label').textContent = `${formatBreakTimeLeft(breakTimeLeft)}`
-                // cambiamos el color 
-            breakColorContainer.classList.replace('green-color', 'orange-color');
-            // mostramos notificacion
-            showBreakNoti()
-            const breakCounter = document.getElementById('breakCounter').innerHTML = `${breakCount}`
+
 
 
         }
@@ -69,6 +55,22 @@ startBreak.addEventListener('click', () => {
     setTimeout(() => {
         startPomodoro.disabled = false
         startBreak.disabled = false
+
+        // hacemos uso del contador de pomodoros, luego habrá que hacer un forEach por cada elemento
+        breakCount++
+        const breakColorContainer = document.getElementById('breakColorContainer')
+        clearInterval(timerInterval);
+        // hay que resetear breakTimePassed para que el contador, al ser otra vez llamada la funcion, no empiece desde su valor antiguo
+        breakTimePassed = 0
+            // time left va a valer lo que valga breakTimeLimit
+        breakTimeLeft = 300;
+        // aca se puede pasar tambien breakTimeLimit
+        const baseTimerLabel = document.getElementById('break-base-timer-label').textContent = `${formatBreakTimeLeft(breakTimeLeft)}`
+            // cambiamos el color 
+        breakColorContainer.classList.replace('green-color', 'orange-color');
+        // mostramos notificacion
+        showBreakNoti()
+        const breakCounter = document.getElementById('breakCounter').innerHTML = `${breakCount}`
     }, 300000)
 
     breakStartTimer();

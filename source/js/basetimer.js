@@ -83,38 +83,14 @@ const startTimer = () => {
         timePassed = timePassed += 1;
         timeLeft = timeLimit - timePassed;
         document.getElementById("base-timer-label").innerHTML = formatTimeLeft(timeLeft);
+        console.log(timePassed);
 
     }, 1000);
+
     stopInterval = setTimeout(() => {
-        if (timePassed == 1500) {
-            // hacemos uso del contador de pomodoros, luego habrá que hacer un forEach por cada elemento
-            count++
-            const pomodoroColorContainer = document.getElementById('pomodoroColorContainer')
-            clearInterval(timerInterval);
-            // hay que resetear timePassed para que el contador, al ser otra vez llamada la funcion, no empiece desde su valor antiguo
-            timePassed = 0
-                // time left va a valer lo que valga timeLimit
-            timeLeft = 1500;
-            // imprimimos
-            const baseTimerLabel = document.getElementById('base-timer-label').textContent = `${formatTimeLeft(timeLeft)}`
-                // cambiamos el color 
-            pomodoroColorContainer.classList.replace('green-color', 'orange-color');
-            // mostramos notificacion
-            showPomodoroNoti()
-                // obtenemos hora y la guardamos en un array
-            getTime()
-            time.push(fullTime)
-                // guardamos el numero del pomodoro y la hora en el sessionStorage
-            saveData()
-                // obtenemos los datos
-            getData()
-                // imprimimos los datos
-            showData()
-                // reestablecemos el boton
 
 
 
-        }
     }, 1500000)
 }
 
@@ -153,6 +129,31 @@ startPomodoro.addEventListener('click', () => {
     setTimeout(() => {
         startPomodoro.disabled = false
         startBreak.disabled = false
+
+        count++
+        const pomodoroColorContainer = document.getElementById('pomodoroColorContainer')
+        pomodoroColorContainer.classList.replace('green-color', 'orange-color');
+        clearInterval(timerInterval);
+        // hay que resetear timePassed para que el contador, al ser otra vez llamada la funcion, no empiece desde su valor antiguo
+        timePassed = 0
+            // time left va a valer lo que valga timeLimit
+        timeLeft = 1500;
+        // imprimimos
+        const baseTimerLabel = document.getElementById('base-timer-label').textContent = `${formatTimeLeft(timeLeft)}`
+            // cambiamos el color 
+
+        // mostramos notificacion
+        showPomodoroNoti()
+            // obtenemos hora y la guardamos en un array
+        getTime()
+        time.push(fullTime)
+            // guardamos el numero del pomodoro y la hora en el sessionStorage
+        saveData()
+            // obtenemos los datos
+        getData()
+            // imprimimos los datos
+        showData()
+            // reestablecemos el boton
     }, 1500000)
 
     startTimer();
