@@ -38,13 +38,6 @@ const breakStartTimer = () => {
         document.getElementById("break-base-timer-label").innerHTML = formatBreakTimeLeft(breakTimeLeft);
 
     }, 1000);
-    stopInterval = setTimeout(() => {
-        if (breakTimePassed == 300) {
-
-
-
-        }
-    }, 300000)
 }
 
 // llamamos al boton de descanso e invocamos la funcion

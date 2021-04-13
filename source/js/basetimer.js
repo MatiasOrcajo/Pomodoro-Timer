@@ -86,12 +86,6 @@ const startTimer = () => {
         console.log(timePassed);
 
     }, 1000);
-
-    stopInterval = setTimeout(() => {
-
-
-
-    }, 1500000)
 }
 
 // guardamos el numero del pomodoro y la hora en el sessionStorage
