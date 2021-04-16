@@ -83,7 +83,7 @@ const startTimer = () => {
         timePassed = timePassed += 1;
         timeLeft = timeLimit - timePassed;
         document.getElementById("base-timer-label").innerHTML = formatTimeLeft(timeLeft);
-        console.log(timePassed);
+
 
     }, 1000);
 }
